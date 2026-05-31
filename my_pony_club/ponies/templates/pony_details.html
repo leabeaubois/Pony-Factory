@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block titre %}Fiche : {{ pony.name }}{% endblock%}
+
+{% block contenu %}   
+    <h1>Fiche :</h1>
+    <!-- {{all_books}} -->
+        <div id="pony_space{{ pony.id }}" class="pony_space details" >
+           
+            <h2>{{ pony.name }}</h2>
+
+                    <div class="pony_stats">
+                        <ul>
+                           <li> <p>Puce : <span class="puce">{{ pony.puce_id }}</span></p></li> 
+                            <li>  <p>Espèce : {{ pony.get_species_display}}</p></li> 
+                            <li>  <p>Création : {{ pony.created_at}}</p></li> 
+                            <li>  <p>Couleur du ventre: {{ pony.belly_color }}</p></li> 
+                            <li>  <p>Couleur des yeux : {{ pony.eye_color }}</p></li> 
+                            <li>  <p>Couleur des crins : {{ pony.mane_color }}</p></li> 
+                            <li>  <p>Couleur de la robe : {{ pony.coat_color }}</p></li> 
+                            <li> <p>Couleur de la corne : {{ pony.horn_color }}</p> </li> 
+                        </ul>
+                    </div> 
+                    {% if pony.biotope != "1" %}
+                    <div class="biotope">  <img src="..{{ pony.biotope.url }}"></div>
+                    {% endif %}
+                    <div class="pony_history">
+                        {% comment %} <p>{{ pony.pony_history }}</p> {% endcomment %}
+                        <p>{% lorem 1 p %}</p>
+                    </div>
+                   
+
+                </a> 
+                {% include "pony_builder.html" %}
+
+        </div>
+  
+    <div class="navigation">
+        <a href="{% url "pony_details" 02 %} ">←</a> 
+        <a href="{% url "home" %}">🏡</a>
+        <a href="{% url "pony_details" 03 %} ">→</a> 
+    </div>
+
+    {% comment %} <a href="{% url "pony_details" 02 %} ">→ pony.id + 1</a> {% endcomment %}
+
+
+
+
+
+{% comment %} 
+<script>
+    const corne = document.querySelectorAll('.corne, .corne1')
+    corne.forEach(elem => {
+        elem.style.backgroundColor= "#{{number}}"
+    });    
+
+    document.querySelector('.eye').style.backgroundColor= "#{{number_a}}"
+    document.querySelector('.ventre').style.backgroundColor= "#{{number_b}}"
+    
+    const criniere = document.querySelectorAll('.criniere1, .criniere2, .criniere3, .queue, .queue1')
+    criniere.forEach(elem => {
+        elem.style.backgroundColor= "#{{number_c}}"
+    });    
+
+    const legs = document.querySelectorAll('.leg1, .leg2, .leg3, .leg4, .corps, .head, .encolure, .oreille')
+    console.log(legs)
+    legs.forEach(elem => {
+        elem.style.backgroundColor= "#{{number_d}}"
+    });    
+</script> {% endcomment %}
+
+
+
+<script>
+let newX = 0, newY = 0, startX = 0, startY = 0;
+
+const card = document.getElementById('pony')
+console.log(card)
+card.addEventListener('mousedown', mouseDown)
+
+function mouseDown(e){
+    startX = e.clientX
+    startY = e.clientY
+
+    document.addEventListener('mousemove', mouseMove)
+    document.addEventListener('mouseup', mouseUp)
+}
+
+function mouseMove(e){
+    newX = startX - e.clientX 
+    newY = startY - e.clientY 
+  
+    startX = e.clientX
+    startY = e.clientY
+
+    card.style.top = (card.offsetTop - newY) + 'px'
+    card.style.left = (card.offsetLeft - newX) + 'px'
+}
+
+function mouseUp(e){
+    document.removeEventListener('mousemove', mouseMove)
+}
+</script>    
+{% endblock %}

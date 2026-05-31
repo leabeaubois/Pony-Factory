@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block contenu %}   
+
+    <div class="book">
+        <h1>{% block titre %}{{ book.title }}{% endblock%}</h1>
+
+        <h2>Résumé</h2>
+        <p class="summary" >{{ book.summary }}</p> 
+
+        <p class="date">Date de publication : {% now "Y-m-d  G:i:s" %}</p>
+        <span class="pages">Nombre de pages : {{ book.page_count }}</span>
+        <p><a href="../">Retourner à la liste de livres</a></p>
+    </div>
+
+    <div id="pony_space">
+        <div class="pony_stats">
+            <p>Couleur des yeux : {{number}}</p>
+            <p>Couleur de la robe : {{number_a}}</p>
+            <p>Couleur de la corne : {{number_b}}</p>
+            <p>Couleur du ventre: {{number_c}}</p>
+            <p>Couleur des crins : {{number_d}}</p>
+        </div>    
+   
+
+        <div id="pony">
+            <div class="eye"></div>
+            <div class="head"></div>
+            <div class="head1"></div>
+            <div class="encolure"></div>
+
+            <div class="oreille"></div>
+
+            <div class="corne"></div>
+            <div class="corne1"></div>
+
+
+            <div class="criniere1"></div>
+            <div class="criniere2"></div>
+            <div class="criniere3"></div>
+
+            <div class="leg1"></div>
+            <div class="leg2"></div>
+            <div class="leg3"></div>
+            <div class="leg4"></div>
+
+            <div class="corps"></div>
+
+            <div class="ventre"></div>
+
+            <div class="queue"></div>
+            <div class="queue1"></div>
+
+        </div>
+    </div>
+
+    <script>
+        const corne = document.querySelectorAll('.corne, .corne1')
+        corne.forEach(elem => {
+            elem.style.backgroundColor= "#{{number}}"
+        });    
+
+        document.querySelector('.eye').style.backgroundColor= "#{{number_a}}"
+        document.querySelector('.ventre').style.backgroundColor= "#{{number_b}}"
+        
+        const criniere = document.querySelectorAll('.criniere1, .criniere2, .criniere3, .queue, .queue1')
+        criniere.forEach(elem => {
+            elem.style.backgroundColor= "#{{number_c}}"
+        });    
+    
+        const legs = document.querySelectorAll('.leg1, .leg2, .leg3, .leg4, .corps, .head, .encolure, .oreille')
+        console.log(legs)
+        legs.forEach(elem => {
+            elem.style.backgroundColor= "#{{number_d}}"
+        });    
+   </script>
+
+
+
+   <script>
+    let newX = 0, newY = 0, startX = 0, startY = 0;
+
+const card = document.getElementById('pony')
+console.log(card)
+card.addEventListener('mousedown', mouseDown)
+
+function mouseDown(e){
+    startX = e.clientX
+    startY = e.clientY
+
+    document.addEventListener('mousemove', mouseMove)
+    document.addEventListener('mouseup', mouseUp)
+}
+
+function mouseMove(e){
+    newX = startX - e.clientX 
+    newY = startY - e.clientY 
+  
+    startX = e.clientX
+    startY = e.clientY
+
+    card.style.top = (card.offsetTop - newY) + 'px'
+    card.style.left = (card.offsetLeft - newX) + 'px'
+}
+
+function mouseUp(e){
+    document.removeEventListener('mousemove', mouseMove)
+}
+   </script>
+{% endblock %}

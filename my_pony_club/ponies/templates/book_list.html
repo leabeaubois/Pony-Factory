@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block contenu %}   
+    <h1>{% block titre %}Tous les livres que j'aime quand même{% endblock%}</h1>
+    <!-- {{all_books}} -->
+    <ul style="border: 3px cornflowerblue solid; background-color: rgb(166, 237, 255);">
+        {{ all_books }}
+
+        {% for book in all_books %}
+        <a href="details/{{ book.id }}"><li style="border: 1px darkorange dashed; margin:10px; background-color: rgb(247, 225, 172);">
+            <h2>{{ book.title }}</h2>
+            <p>Résumé : {{ book.summary }}</p>
+            <p>Nombre de pages : {{ book.page_count }}</p>
+            <p>{% lorem 50 w %}</p>
+
+
+        </li></a>
+        {% endfor %}
+    </ul>
+{% endblock %}

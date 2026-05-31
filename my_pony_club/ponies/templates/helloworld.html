@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block contenu %}    
+    <h1>Hello World!</h1>
+    <p>Welcome to my first Django project!</p>
+    <p>It is a projet of a <em>utopian pony club</em>.</p>
+
+    <p>Message : {{ message }}</p>
+    <p>Ton nombre porte bonheur est le : {{ lucky_number }}</p>
+
+    <h2>Ponies member</h2>
+        <ul>
+        {% for x in myponies %}
+            <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+        {% endfor %}
+        </ul>
+{% endblock %}
