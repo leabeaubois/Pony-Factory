@@ -7,8 +7,9 @@ To install the required packages in a virtual environment:
 
 
 # Next things to do :
-- Create the new skin for species
+- Create new skins for species
 - Upscaling the pixel art square grid 15 -> 30
+- Crash testing the design with box-shadow styling instead of grid. < See : https://dev.to/jnschrag/creating-pixel-art-with-css-3451 >
 - Optimisation of the javascript for creating the genetic selection for color and species
 - *secret* Write the rules of genetics
-- Learn and serach about real horses coat and pattern genetics
+- Doing some research about real horses coat and pattern genetics
