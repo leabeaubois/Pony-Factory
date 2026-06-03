@@ -8,29 +8,9 @@
     <button type="button" id="factorybutton">Cloner un poney !</button>
     <button type="button" id="mon-bouton">Générer aléatoirement un poney qui reste dans la base de donnée !</button>
     
-    {% comment %} <ul id="ponies_list"> {% endcomment %}
         <div id="game-area"> 
         {% for pony in all_ponies %}
-
-        {% comment %} <div id="pony_space{{ pony.id }}" class="pony_space"> {% endcomment %}
-                {% comment %} <li>
-                    <a href="details/{{ pony.id }}">
-                        <h2>{{ pony.name }}</h2>
-                    </a> 
-                    <div class="pony_stats">
-                        <ul>
-                           <li> <p>Puce : <span class="puce">{{ pony.puce_id }}</span></p></li> 
-                        </ul>
-                    </div>     {% endcomment %}
-                
-                {% comment %} Vérifier si poney rustique ou licorne {% endcomment %}
-                
-                    {% include "pony_builder.html" %}
-                   
-                {% comment %} </li> {% endcomment %}
-        {% comment %} </div> {% endcomment %}
+            {% include "pony_builder.html" %}
         {% endfor %}
         </div>  
-    {% comment %} </ul> {% endcomment %}
-
 {% endblock %}

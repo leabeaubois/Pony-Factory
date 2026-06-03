@@ -79,11 +79,13 @@ const gameArea = document.getElementById('game-area');
         //console.log("1 . multiplication")
         numPonies++
         const basePony = document.getElementById('pony1');
+        const basePonyLabel = document.getElementById('label-pony-1');
+        const newPonyLabel = basePonyLabel.cloneNode(true);
         const newPony = basePony.cloneNode(true);
       
-        //console.log("new pony id:", numPonies)
+        newPonyLabel.id = "label-pony" + numPonies;
         newPony.id = "pony" + numPonies;
-        //  newPony.classList.add('pony');
+
         newPony.setAttribute('draggable', 'true');
       
         // 2. Positionner le nouveau cercle près de la cible
@@ -201,6 +203,10 @@ const gameArea = document.getElementById('game-area');
         }
 
 
+        // Supprimer l'info corne
+        // remplacer la manière de récupérer les variables ?
+        // stocker qqlpart, ex : 
+
         // SKIN PARENT B
         //
         var eyeB = convertRgb(target.getElementsByClassName('eye')[0].style.backgroundColor)
@@ -241,7 +247,7 @@ const gameArea = document.getElementById('game-area');
         var parentAcolor = convertRgb(dragged.style.backgroundColor)
         var babyColorMix50 = mix_hexes(parentAcolor, parentBcolor)
         var possibilities = [parentAcolor, parentBcolor, babyColorMix50]
-       let babyColor = possibilities[Math.floor(Math.random() * possibilities.length)];
+        let babyColor = possibilities[Math.floor(Math.random() * possibilities.length)];
 
 
         var eyeBabyColor = eyePossibilities[Math.floor(Math.random() * eyePossibilities.length)];
@@ -286,12 +292,21 @@ const gameArea = document.getElementById('game-area');
         
         newPony.classList.add(babySpecies);
 
+   
 
         // 4. Ajouter les événements drag au nouveau cercle
         makeDraggable(newPony);
         
         // 5. Ajouter au DOM dans la zone de jeu
         gameArea.appendChild(newPony);
+
+
+
+        const wrapper = document.createElement('div.pony-build');
+        newPony.parentNode.insertBefore(wrapper, newPony);
+        
+        newPony.appendChild(newPonyLabel);
+
       } //End if --> drop
     }
   });
