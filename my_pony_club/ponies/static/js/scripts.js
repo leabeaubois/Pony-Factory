@@ -1,6 +1,6 @@
 // suggestion à corriger et adapter
 //
-// gamearea variable de la zone de jeux
+// gamearea letiable de la zone de jeux
 let i = 0;
 //console.log("i",i)
 
@@ -8,14 +8,9 @@ let  numPonies = document.getElementsByClassName('pony').length;
 //console.log(numPonies)
 
 const gameArea = document.getElementById('game-area');
-
-  //console.log("i:", i)
   // Initialiser les cercles existants
   document.querySelectorAll('.pony').forEach(makeDraggable); 
 
-
-
-    
   // building the makeDraggable 
   function makeDraggable(pony) {
     // La propriété draggable de l'interface HTMLElement 
@@ -72,7 +67,7 @@ const gameArea = document.getElementById('game-area');
         const parentBSpecies = parentBClasses.replace("pony ", "");
 
         const parentsSpecies = [parentASpecies, parentASpecies]
-        console.log(parentASpecies)
+        //console.log(parentASpecies)
 
         // --- LOGIQUE DE MULTIPLICATION ---
         // 1. Créer un nouveau cercle
@@ -99,14 +94,14 @@ const gameArea = document.getElementById('game-area');
         // Mixing color function
         function convertRgb(rgb) {
         // This will choose the correct separator, if there is a "," in your value it will use a comma, otherwise, a separator will not be used.
-        var separator = rgb.indexOf(",") > -1 ? "," : " ";
+        let separator = rgb.indexOf(",") > -1 ? "," : " ";
       
       
         // This will convert "rgb(r,g,b)" into [r,g,b] so we can use the "+" to convert them back to numbers before using toString 
         rgb = rgb.substr(4).split(")")[0].split(separator);
       
         // Here we will convert the decimal values to hexadecimal using toString(16)
-        var r = (+rgb[0]).toString(16),
+        let r = (+rgb[0]).toString(16),
           g = (+rgb[1]).toString(16),
           b = (+rgb[2]).toString(16);
       
@@ -189,9 +184,9 @@ const gameArea = document.getElementById('game-area');
             
         //    for (let x = 0; x < parents.options.length; x++) {
         //      function getParentSkin(x){
-        //        var eye = convertRgb(parents[x].getElementsByClassName('eye')[0].style.backgroundColor)
-        //        var mouth = convertRgb(parents[x].getElementsByClassName('mouth')[0].style.backgroundColor)
-        //        var skinParent = [eye, mouth]
+        //        let eye = convertRgb(parents[x].getElementsByClassName('eye')[0].style.backgroundColor)
+        //        let mouth = convertRgb(parents[x].getElementsByClassName('mouth')[0].style.backgroundColor)
+        //        let skinParent = [eye, mouth]
         //      }
         //      return skinParent
         //    }
@@ -204,57 +199,63 @@ const gameArea = document.getElementById('game-area');
 
 
         // Supprimer l'info corne
-        // remplacer la manière de récupérer les variables ?
+        // remplacer la manière de récupérer les letiables ?
         // stocker qqlpart, ex : 
+
+        // // Objet 
+        // let skinParentA = {
+        //   "eyeB" : "",
+        //   "coatB" : "",
+        // }
 
         // SKIN PARENT B
         //
-        var eyeB = convertRgb(target.getElementsByClassName('eye')[0].style.backgroundColor)
-        var coatB = convertRgb(target.getElementsByClassName('head')[0].style.backgroundColor)
-        var hornB = convertRgb(target.getElementsByClassName('corne')[0].style.backgroundColor)
-        var bellyB = convertRgb(target.getElementsByClassName('ventre')[0].style.backgroundColor)
-        var maneB = convertRgb(target.getElementsByClassName('queue')[0].style.backgroundColor)
+        let eyeB = convertRgb(target.getElementsByClassName('eye')[0].style.backgroundColor)
+        let coatB = convertRgb(target.getElementsByClassName('head')[0].style.backgroundColor)
+        let hornB = convertRgb(target.getElementsByClassName('corne')[0].style.backgroundColor)
+        let bellyB = convertRgb(target.getElementsByClassName('ventre')[0].style.backgroundColor)
+        let maneB = convertRgb(target.getElementsByClassName('queue')[0].style.backgroundColor)
         
-        var skinParentB = [eyeB, coatB, hornB, bellyB, maneB]
+        let skinParentB = [eyeB, coatB, hornB, bellyB, maneB]
 
 
         // SKIN PARENT A
         //
-        var eyeA = convertRgb(dragged.getElementsByClassName('eye')[0].style.backgroundColor)
-        var coatA = convertRgb(dragged.getElementsByClassName('head')[0].style.backgroundColor)
-        var hornA = convertRgb(dragged.getElementsByClassName('corne')[0].style.backgroundColor)
-        var bellyA = convertRgb(dragged.getElementsByClassName('ventre')[0].style.backgroundColor)
-        var maneA = convertRgb(dragged.getElementsByClassName('queue')[0].style.backgroundColor)
+        let eyeA = convertRgb(dragged.getElementsByClassName('eye')[0].style.backgroundColor)
+        let coatA = convertRgb(dragged.getElementsByClassName('head')[0].style.backgroundColor)
+        let hornA = convertRgb(dragged.getElementsByClassName('corne')[0].style.backgroundColor)
+        let bellyA = convertRgb(dragged.getElementsByClassName('ventre')[0].style.backgroundColor)
+        let maneA = convertRgb(dragged.getElementsByClassName('queue')[0].style.backgroundColor)
         
-        var skinParentA = [eyeA, coatA, hornA, bellyA, maneA]
+        let skinParentA = [eyeA, coatA, hornA, bellyA, maneA]
 
         
-        var eyeMix50 = mix_hexes(skinParentB[0], skinParentA[0])
-        var coatMix50 = mix_hexes(skinParentB[1], skinParentA[1]) 
-        var hornMix50 = mix_hexes(skinParentB[2], skinParentA[2])
-        var bellyMix50 = mix_hexes(skinParentB[3], skinParentA[3])
-        var maneMix50 = mix_hexes(skinParentB[4], skinParentA[4])
+        let eyeMix50 = mix_hexes(skinParentB[0], skinParentA[0])
+        let coatMix50 = mix_hexes(skinParentB[1], skinParentA[1]) 
+        let hornMix50 = mix_hexes(skinParentB[2], skinParentA[2])
+        let bellyMix50 = mix_hexes(skinParentB[3], skinParentA[3])
+        let maneMix50 = mix_hexes(skinParentB[4], skinParentA[4])
 
 
-        var eyePossibilities = [skinParentA[0], skinParentB[0], eyeMix50]
-        var coatPossibilities = [skinParentA[1], skinParentB[1], coatMix50]
-        var hornPossibilities = [skinParentA[2], skinParentB[2], hornMix50]
-        var bellyPossibilities = [skinParentA[3], skinParentB[3], bellyMix50]
-        var manePossibilities = [skinParentA[4], skinParentB[4], maneMix50]
+        let eyePossibilities = [skinParentA[0], skinParentB[0], eyeMix50]
+        let coatPossibilities = [skinParentA[1], skinParentB[1], coatMix50]
+        let hornPossibilities = [skinParentA[2], skinParentB[2], hornMix50]
+        let bellyPossibilities = [skinParentA[3], skinParentB[3], bellyMix50]
+        let manePossibilities = [skinParentA[4], skinParentB[4], maneMix50]
 
        
-        var parentBcolor = convertRgb(target.style.backgroundColor)
-        var parentAcolor = convertRgb(dragged.style.backgroundColor)
-        var babyColorMix50 = mix_hexes(parentAcolor, parentBcolor)
-        var possibilities = [parentAcolor, parentBcolor, babyColorMix50]
+        let parentBcolor = convertRgb(target.style.backgroundColor)
+        let parentAcolor = convertRgb(dragged.style.backgroundColor)
+        let babyColorMix50 = mix_hexes(parentAcolor, parentBcolor)
+        let possibilities = [parentAcolor, parentBcolor, babyColorMix50]
         let babyColor = possibilities[Math.floor(Math.random() * possibilities.length)];
 
 
-        var eyeBabyColor = eyePossibilities[Math.floor(Math.random() * eyePossibilities.length)];
-        var coatBabyColor = coatPossibilities[Math.floor(Math.random() * coatPossibilities.length)];
-        var hornBabyColor = hornPossibilities[Math.floor(Math.random() * hornPossibilities.length)];
-        var bellyBabyColor = bellyPossibilities[Math.floor(Math.random() * bellyPossibilities.length)];
-        var maneBabyColor = manePossibilities[Math.floor(Math.random() * manePossibilities.length)];
+        let eyeBabyColor = eyePossibilities[Math.floor(Math.random() * eyePossibilities.length)];
+        let coatBabyColor = coatPossibilities[Math.floor(Math.random() * coatPossibilities.length)];
+        let hornBabyColor = hornPossibilities[Math.floor(Math.random() * hornPossibilities.length)];
+        let bellyBabyColor = bellyPossibilities[Math.floor(Math.random() * bellyPossibilities.length)];
+        let maneBabyColor = manePossibilities[Math.floor(Math.random() * manePossibilities.length)];
 
         let babySpecies = parentsSpecies[Math.floor(Math.random() * parentsSpecies.length)];
 
@@ -302,10 +303,13 @@ const gameArea = document.getElementById('game-area');
 
 
 
-        const wrapper = document.createElement('div.pony-build');
+        const wrapper = document.createElement('div');
+        wrapper.classList.add("pony-build");
         newPony.parentNode.insertBefore(wrapper, newPony);
-        
-        newPony.appendChild(newPonyLabel);
+        wrapper.appendChild(newPony);
+
+        //newPony.appendChild(newPonyLabel);
+        wrapper.insertBefore(newPonyLabel, wrapper.firstChild);
 
       } //End if --> drop
     }
