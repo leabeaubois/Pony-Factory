@@ -3,7 +3,7 @@
 To install the required packages in a virtual environment:
 
 `path/to/venv/python -m pip install --requirement requirements.txt`
-
+🔎 Investigate why `pip freeze` doesn't work...
 
 
 # Next things to do :
@@ -13,3 +13,4 @@ To install the required packages in a virtual environment:
 - Optimisation of the javascript for creating the genetic selection for color and species
 - *secret* Write the rules of genetics
 - Doing some research about real horses coat and pattern genetics
+- Optimize the display and layout (pony details, pony game area, animation when discovering new species...)
