@@ -34,12 +34,12 @@
     document.getElementById("mon-bouton").addEventListener("click", () => {
         saveAction({ 
             name: "Random_creation",
-            eye: "#{{number_c}}",
-            coat: "#{{number_a}}", 
-            horn: "#{{number_d}}", 
-            belly: "#{{number_b}}", 
-            mane: "#{{number}}",
-            species:"{{species_number}}",
+            eye: "#/* {{number_c}} */",
+            coat: "#/* {{number_a}} */", 
+            horn: "#/* {{number_d}} */", 
+            belly: "#/* {{number_b}} */", 
+            mane: "#/* {{number}} */",
+            species:"/* {{species_number}} */",
             champ1: "test1", 
             champ2: "test2", 
         });

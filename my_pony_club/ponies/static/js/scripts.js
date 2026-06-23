@@ -66,7 +66,7 @@ const gameArea = document.getElementById('game-area');
         const parentBClasses = dragged.className;
         const parentBSpecies = parentBClasses.replace("pony ", "");
 
-        const parentsSpecies = [parentASpecies, parentASpecies]
+        const parentsSpecies = [parentASpecies, parentBSpecies]
         //console.log(parentASpecies)
 
         // --- LOGIQUE DE MULTIPLICATION ---
@@ -201,6 +201,10 @@ const gameArea = document.getElementById('game-area');
         // Supprimer l'info corne
         // remplacer la manière de récupérer les letiables ?
         // stocker qqlpart, ex : 
+        //
+        // 
+        // document.documentElement.style.setProperty('--your-variable', '#YOURCOLOR');
+        // 
 
         // // Objet 
         // let skinParentA = {
