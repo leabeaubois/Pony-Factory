@@ -23,6 +23,7 @@ gameArea.addEventListener('drop', (e) => {
   let target = e.target;
   const dragged = window.draggedElement;
 
+  // Changer le type d'event et gérer la propagation pour éviter ce passage
   // Remonter au parent .pony si on a cliqué sur un enfant
   if (target.classList.contains('pony') === false && target.closest('.pony')) {
     target = target.closest('.pony');
@@ -107,16 +108,16 @@ function mix_hexes(...hexes) {
   return rgb2hex(...mixedRgb);
 }
 
-/** Espèce du bébé (FIX : recevait pas target/dragged en paramètres) */
+/** Espèce du bébé */
 function choosingSpecies(target, dragged) {
-  // On extrait la classe d'espèce en ignorant "pony"
+  // Récupère la classe d'espèce en ignorant "pony"
   const speciesA = [...dragged.classList].find(c => c !== 'pony');
   const speciesB = [...target.classList].find(c => c !== 'pony');
   const parents = [speciesA, speciesB].filter(Boolean);
   return parents[Math.floor(Math.random() * parents.length)] ?? 'pony';
 }
 
-/** Couleurs du poney (FIX : utilisait target au lieu du paramètre pony) */
+/** Couleurs du poney  */
 function getSkin(pony) {
   const get = (cls) => {
     const el = pony.getElementsByClassName(cls)[0];
@@ -132,7 +133,7 @@ function getSkin(pony) {
 }
 
 
-/** Mélange des couleurs (FIX : retournait sans valeur) */
+/** Mélange des couleurs */
 function mixingBabyPonyColor(target, dragged) {
   const skinA = getSkin(dragged);
   const skinB = getSkin(target);
@@ -146,7 +147,7 @@ function mixingBabyPonyColor(target, dragged) {
 }
 
 
-/** Application des couleurs sur le bébé (FIX : variables non définies) */
+/** Application des couleurs sur le bébé */
 function coloringBabyPony(pony, colors) {
   // Yeux
   const eye = pony.getElementsByClassName('eye')[0];
@@ -170,11 +171,11 @@ function coloringBabyPony(pony, colors) {
 }
 
 
-/** Création du bébé poney (FIX : clone global → clone local, ordre DOM corrigé) */
+/** Création du bébé poney */
 function createPonyBuild(babyColors, babySpecies) {
   numPonies++;
 
-  // Cloner à chaque naissance (et non une seule fois au chargement)
+  // Cloner à chaque naissance
   const newPony = basePony.cloneNode(true);
   const newPonyLabel = basePonyLabel.cloneNode(true);
 

@@ -1,0 +1,349 @@
+.pony.unicornXL {
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  grid-template-rows: repeat(30, 1fr);
+  width: 50px;
+  height: 50px;
+  position: relative;
+  padding: 20px 0 0 0;
+  padding: 5rem;
+
+  --mane-color:rgb(255, 73, 158);
+  --body-color:#0d1613;
+  --belly-color:#692b27;
+  --eye-color:#0000ce;
+  --body-shadow-color:#000a05;
+
+  div{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--mane-color);
+    z-index: 999;
+  } 
+
+  /* Crinière */
+  div:nth-of-type(1) {
+    grid-column: 2;
+    grid-row: 4/8; 
+  }
+  div:nth-of-type(2){
+    grid-column: 3;
+    grid-row: 5/10; 
+  }
+  div:nth-of-type(3){
+    grid-column: 4;
+    grid-row: 6/10;   
+  }
+  div:nth-of-type(4){
+    grid-column: 2/5;
+    grid-row: 10/17;   
+  }
+  div:nth-of-type(5){
+    grid-column: 1;
+    grid-row: 9/15;   
+  }
+  div:nth-of-type(6){
+    grid-column: 4/6;
+    grid-row: 17;   
+  }
+  div:nth-of-type(7){
+    grid-column: 5;
+    grid-row: 18;   
+  }
+  div:nth-of-type(8){
+    grid-column: 5;
+    grid-row: 3/9;   
+  }
+  div:nth-of-type(9){
+    grid-column: 6;
+    grid-row: 4;   
+  }
+  div:nth-of-type(10){
+    grid-column: 6/9;
+    grid-row: 5/7; 
+  }
+  div:nth-of-type(11){
+    grid-column: 9/10;
+    grid-row:5;  
+  }
+
+  /* Corps */
+  div:nth-of-type(12){
+    z-index: 9;
+    background-color: var(--body-color);
+    grid-column: 5/10;
+    grid-row: 9/19;
+  }
+  div:nth-of-type(13){ 
+    z-index: 9;
+    background-color: var(--body-color);
+    grid-column: 6/16;
+    grid-row: 6/10;
+  }
+
+  div:nth-of-type(14){ 
+    z-index: 9;
+    background-color: var(--body-color);
+    grid-column: 10/15;
+    grid-row: 5; 
+  }
+
+  div:nth-of-type(15){ 
+    z-index: 9;
+    background-color:var(--body-color);
+    grid-column:10/12;
+    grid-row: 4;
+  }
+  div:nth-of-type(16){ 
+    z-index: 9;
+    background-color:var(--body-color);
+    grid-column:11;
+    grid-row: 3;
+  }
+  div:nth-of-type(17){  
+    z-index: 9;
+    background-color:var(--body-color);
+    grid-column:14;
+    grid-row:3/12;
+  }
+
+  div:nth-of-type(18){ 
+    z-index: 9;
+    background-color:var(--body-color);
+    grid-column:15;
+    grid-row:10/12;
+  }
+
+  div:nth-of-type(19){ 
+    z-index: 9;
+    background-color:var(--body-color);
+    grid-column:13;
+    grid-row:10;
+  }
+  div:nth-of-type(20){ 
+    z-index: 9;
+    background-color:var(--body-color);
+    grid-column:10/12;
+    grid-row: 13/21;
+  }
+
+  div:nth-of-type(21){ 
+    z-index: 99;
+    background-color:var(--body-color);
+    grid-column:9;
+    grid-row:19/22; 
+  }
+
+  div:nth-of-type(22){ 
+    z-index: 99;
+    background-color:var(--body-color);
+    grid-column:11/24;
+    grid-row:14/19; 
+  }
+
+  div:nth-of-type(23){ 
+    z-index: 99;
+    background-color:var(--body-color);
+    grid-column:18/23;
+    grid-row:13; 
+  
+  }
+  div:nth-of-type(24){ 
+    z-index: 99;
+    background-color:var(--body-color);
+    grid-column:21/25;
+    grid-row:15/23; 
+  }
+  div:nth-of-type(25){ 
+    z-index: 99;
+    background-color:var(--body-color);
+    grid-column:19/21;
+    grid-row:19/21; 
+  }
+
+
+
+  /* Ventre */
+  div:nth-of-type(26){ 
+    background-color: var(--belly-color);
+    grid-column:11/19;
+    grid-row: 18/20;
+  }
+  div:nth-of-type(27){ 
+    background-color: var(--belly-color);
+    grid-column:18;
+    grid-row:17;
+  }
+  div:nth-of-type(28){ 
+    z-index: 9;
+    background-color: var(--belly-color);
+    grid-column:11/17;
+    grid-row: 20;
+  }
+
+  /* Jambe avant gauche */
+  div:nth-of-type(29){ 
+    z-index: 9;
+    background-color:var(--body-color);
+    grid-column:6/9;
+    grid-row:19/25;
+  }
+  div:nth-of-type(30){ 
+    z-index: 9;
+    background-color:var(--body-color);
+    grid-column:5/7;
+    grid-row:25/27;
+ }
+ div:nth-of-type(31){ 
+    z-index: 9;
+    background-color:var(--body-color);
+    grid-column:4/6;
+    grid-row:27/30;
+  }
+  /* Sabot avant gauche*/
+  div:nth-of-type(32){ 
+    z-index: 9;
+    background-color:var(--body-color);
+    grid-column:2/4;
+    grid-row:30;
+  }
+  div:nth-of-type(33){ 
+    z-index: 9;
+    background-color:var(--body-color);
+    grid-column:3;
+    grid-row:29;
+  }
+
+  /* Jambe avant droite*/
+  div:nth-of-type(34){ 
+    z-index: 0;
+    background-color: var(--body-shadow-color);
+    grid-column: 9/11;
+    grid-row:21/30;
+  }
+
+  /* Sabot avant droit */
+  div:nth-of-type(35){ 
+    background-color: var(--body-shadow-color);
+    grid-column: 8/10;
+    grid-row:30;
+  }
+  
+  /* Jambre arrière gauche */
+  div:nth-of-type(36){ 
+    z-index: 99;
+    background-color:var(--body-color);
+    grid-column:25/27;
+    grid-row:22/30; 
+  }
+  /* Sabot arrière gauche */
+  div:nth-of-type(37){ 
+    z-index: 99;
+    background-color:var(--body-color);
+    grid-column:24/26;
+    grid-row:30; 
+  }
+
+  /* Jambe arrière droit */
+  div:nth-of-type(38){ 
+    z-index: 0;
+    background-color:var(--body-shadow-color);
+    grid-column:18/21;
+    grid-row:20/25; 
+  }
+  div:nth-of-type(39){ 
+    z-index: 0;
+    background-color:var(--body-shadow-color);
+    grid-column:17/19;
+    grid-row:24/29; 
+  }
+  div:nth-of-type(40){ 
+    z-index: 0;
+    background-color:var(--body-shadow-color);
+    grid-column:16/18;
+    grid-row:29; 
+  }
+  
+  /* Sabot arrirèe droit*/
+div:nth-of-type(41){ 
+  z-index: 0;
+  background-color:var(--body-shadow-color);
+  grid-column:15/18;
+  grid-row:30; 
+}
+
+  /* Oeil */
+  div:nth-of-type(42){ 
+    z-index: 9;
+    background-color: var(--eye-color);
+    grid-column: 13;
+    grid-row:7;
+  }
+
+
+  /* Queue  */
+ div:nth-of-type(43){ 
+    z-index: 7;
+    grid-column: 21/23;
+    grid-row: 24/26;
+  }
+
+  div:nth-of-type(44){ 
+    z-index: 7;
+    grid-column:23;
+    grid-row: 26;
+  }
+  div:nth-of-type(45){ 
+    z-index: 7;
+    grid-column:20;
+    grid-row: 25/28;
+  }
+  div:nth-of-type(46){ 
+    z-index: 7;
+    grid-column:21;
+    grid-row: 27/29;
+  }
+  div:nth-of-type(47){ 
+    z-index: 7;
+    grid-column:22;
+    grid-row: 28;
+  }
+  div:nth-of-type(48){ 
+    z-index: 7;
+    grid-column:23;
+    grid-row: 25;
+  }
+
+/* Queur de couleur body */
+  div:nth-of-type(49){ 
+    z-index: 7;
+    background-color: var(--body-color);
+    grid-column:23/29;
+    grid-row: 28;
+  }
+  div:nth-of-type(50){ 
+    z-index: 7;
+    background-color: var(--body-color);
+    grid-column:29;
+    grid-row: 18/28;
+  }
+  div:nth-of-type(51){ 
+    z-index: 7;
+    background-color: var(--body-color);
+    grid-column:24/27;
+    grid-row: 15;
+  }
+  div:nth-of-type(52){ 
+    z-index: 7;
+    background-color: var(--body-color);
+    grid-column:24/29;
+    grid-row: 16;
+  }
+    div:nth-of-type(53){ 
+    z-index: 7;
+    background-color: var(--body-color);
+    grid-column:28;
+    grid-row:17/19;
+  }
+}
